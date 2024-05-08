@@ -1,0 +1,28 @@
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Prompt the user for input
+  Serial.println("Enter a number:");
+  
+  // Wait until the user inputs something
+  while (Serial.available() == 0) {
+    // Do nothing
+  }
+  
+  // Read the user's input
+  int userInput = Serial.parseInt();
+  
+  // Calculate the square
+  int squaredValue = userInput * userInput;
+  
+  // Print the result
+  Serial.print("The square of ");
+  Serial.print(userInput);
+  Serial.print(" is ");
+  Serial.println(squaredValue);
+  
+  // Wait for a moment before prompting again
+  delay(1000);
+}
